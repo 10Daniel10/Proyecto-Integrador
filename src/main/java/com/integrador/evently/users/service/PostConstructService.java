@@ -3,10 +3,10 @@ package com.integrador.evently.users.service;
 import com.integrador.evently.users.keycloakClient.KeycloakClient;
 import com.integrador.evently.users.model.UserType;
 import org.springframework.stereotype.Service;
-
 import javax.annotation.PostConstruct;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 //@Service
 public class PostConstructService {
@@ -23,7 +23,8 @@ public class PostConstructService {
         if (keycloakClient.isNecessary(realmName)) {
             String usersClientName = "users-client";
             String usersClientSecret = "users-secret";
-            List<String> roles = Arrays.stream(UserType.values()).map(UserType::toString).toList();
+
+            List<String> roles = Arrays.stream(UserType.values()).map(UserType::toString).collect(Collectors.toList());
             String scope = "roles";
 
             keycloakClient.createRealm(realmName);
