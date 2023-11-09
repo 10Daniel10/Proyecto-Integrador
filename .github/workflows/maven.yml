@@ -18,7 +18,7 @@ jobs:
         path: |
           ~/.m2/repository
         key: maven-${{ hashFiles('**/pom.xml') }}
-    7- name: Set up JDK 11 and Maven 3.8.3
+    - name: Set up JDK 17 and Maven 3.8.3
       run: |
         wget https://dlcdn.apache.org/maven/maven-3/3.8.8/binaries/apache-maven-3.8.8-bin.tar.gz
         tar xzvf apache-maven-3.8.8-bin.tar.gz
