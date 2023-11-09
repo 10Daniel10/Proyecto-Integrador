@@ -18,13 +18,6 @@ jobs:
         java-version: '17'
         cache: maven
         distribution: 'temurin'
-    - name: Set up Maven 3.8.8
-      run: |
-        wget https://dlcdn.apache.org/maven/maven-3/3.8.8/binaries/apache-maven-3.8.8-bin.tar.gz
-        tar xzvf apache-maven-3.8.8-bin.tar.gz
-        export PATH=$PWD/apache-maven-3.8.8/bin:$PATH
-        mvn -v
-      shell: bash
     - name: Clean with Maven
       run: mvn -B clean --file /home/ubuntu/actions-runner/_work/Proyecto-Integrador/Proyecto-Integrador/pom.xml
     - name: Validate with Maven
