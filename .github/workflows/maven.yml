@@ -20,6 +20,10 @@ jobs:
         distribution: 'temurin'
     - name: Clean with Maven
       run: mvn -B clean --file /home/ubuntu/actions-runner/_work/Proyecto-Integrador/Proyecto-Integrador/pom.xml
+    - name: Validate with Maven
+      run: mvn -B validate --file /home/ubuntu/actions-runner/_work/Proyecto-Integrador/Proyecto-Integrador/pom.xml
+    - name: Compile with Maven
+      run: mvn -B compile --file /home/ubuntu/actions-runner/_work/Proyecto-Integrador/Proyecto-Integrador/pom.xml
     - name: Build with Maven
       run: mvn -B package --file /home/ubuntu/actions-runner/_work/Proyecto-Integrador/Proyecto-Integrador/pom.xml
     - name: Execute Jar File
