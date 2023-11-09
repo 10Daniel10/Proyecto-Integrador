@@ -8,12 +8,10 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     properties:
+      generate-ddl: ture
       hibernate:
         dialect: org.hibernate.dialect.MySQL5Dialect
         ddl-auto: update
-  logging:
-    level:
-      org.hibernate.SQL: debug
   security:
     oauht2:
       client:
