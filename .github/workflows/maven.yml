@@ -18,14 +18,6 @@ jobs:
         java-version: '17'
         distribution: 'zulu'
         cache: maven
-    - name: Cache Maven
-      id: cache-primes
-      uses: actions/cache@v3
-      with:
-          path: |
-            ~/.m2
-            ~/repository
-          key: ${{ github.job }}-${{ hashFiles('**/pom.xml') }}
     - name: Test MVN
       run: mvn -v
       
